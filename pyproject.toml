@@ -33,6 +33,7 @@ pytest-cov = "^2.10.1"
 ipdb = "^0.13.4"
 pre-commit = "^2.9.3"
 sphinx = "^3.4.1"
+jedi = "0.17.2"
 
 
 [build-system]

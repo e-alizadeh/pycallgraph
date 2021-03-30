@@ -12,16 +12,16 @@ from .output import Output
 
 
 class GraphvizOutput(Output):
-    def __init__(self, **kwargs):
+    def __init__(self, output_file="pycallgraph.png", **kwargs):
         self.tool = "dot"
-        self.output_file = "pycallgraph.png"
+        self.output_file = output_file
         self.output_type = "png"
         self.font_name = "Verdana"
         self.font_size = 7
         self.group_font_size = 10
         self.group_border_color = Color(0, 0, 0, 0.8)
 
-        Output.__init__(self, **kwargs)
+        Output.__init__(self, output_file=output_file, **kwargs)
 
         self.prepare_graph_attributes()
 

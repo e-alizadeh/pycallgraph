@@ -10,9 +10,9 @@ from ..exceptions import PyCallGraphException
 class Output(object):
     """Base class for all outputters."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, output_file="pycallgraph.png", **kwargs):
         self.processor = None
-        self.output_file = None
+        self.output_file = output_file
         self.fp = None
         self.node_color_func = self.node_color
         self.edge_color_func = self.edge_color

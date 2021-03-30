@@ -203,10 +203,8 @@ class TraceProcessor(Thread):
 
             # Load the trace filter, if any. 'keep' determines if we should
             # ignore this call
-            # TODO: Below condition wsa resulting in a bug setting to keep = False and breaking few tests in
-            #       test_trace_processor.py
-            # if keep and self.config.trace_filter:
-            #     keep = self.config.trace_filter(full_name)
+            if keep and self.config.trace_filter:
+                keep = self.config.trace_filter(full_name)
 
             # Store the call information
             if keep:

@@ -12,6 +12,7 @@ TOP_DIR: pathlib.Path = ROOT_DIR.parent
 from . import decorators
 from .color import Color, ColorException
 from .config import Config
+from .decorators import trace
 from .exceptions import PyCallGraphException
 from .globbing_filter import GlobbingFilter
 from .grouper import Grouper
