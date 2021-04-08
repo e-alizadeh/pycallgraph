@@ -56,4 +56,17 @@ Features
 -   Modules can be visually grouped together.
 -   Easily extendable to create your own output formats.
 
+Command-line interface
+----------------------
 
+The following commands shall collect the call graph into the specified output file in .dot format, which can then be visualized as an SVG image:
+
+```
+pycallgraph graphviz --output-format=dot --output-file=script.dot -- ./script.py
+dot -Tsvg script.dot > script.svg
+```
+
+Development
+-----------
+
+Clone this repository and issue a `poetry install` command, in order to install the current version of package.
