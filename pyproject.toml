@@ -20,6 +20,9 @@ name = 'default'
 url = 'https://pypi.python.org/simple'
 secondary = true
 
+[tool.poetry.scripts]
+pycallgraph = "pycallgraph.pycallgraph:main"
+
 [tool.poetry.dependencies]
 python = "^3.6.1"
 memory_profiler="^0.58.0"

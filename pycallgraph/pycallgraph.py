@@ -98,3 +98,24 @@ class PyCallGraph(object):
         output.sanity_check()
         output.set_processor(self.tracer.processor)
         output.reset()
+
+def main():
+    import os, sys
+    # Inject the current working directory so modules can be imported.
+    sys.path.insert(0, os.getcwd())
+
+    import pycallgraph as __pycallgraph
+
+    __config = __pycallgraph.Config()
+    __config.parse_args()
+    __config.strip_argv()
+
+    globals()['__file__'] = __config.command
+
+    __file_content = open(__config.command).read()
+
+    with __pycallgraph.PyCallGraph(config=__config):
+        exec(__file_content)
+
+if __name__ == '__main__':
+    main()
